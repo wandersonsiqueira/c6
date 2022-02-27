@@ -1,0 +1,463 @@
+
+<!doctype html>
+  <html xml:lang="pt-BR" lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="C6 Bank Reimagined and Improved UX">
+    <meta name="author" content="Wanderson Siqueira">
+    <meta name="generator" content="wandersonsiqueira">
+    <title>C6 - Extrato</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+
+
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="" sizes="180x180">
+    <link rel="icon" href="" sizes="32x32" type="image/png">
+    <link rel="icon" href="" sizes="16x16" type="image/png">
+    <link rel="manifest" href="">
+    <link rel="mask-icon" href="" color="#121212">
+    <link rel="icon" href="https://www.c6bank.com.br/favicon.ico">
+    <meta name="theme-color" content="#121212">
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/5.1/examples/dashboard/dashboard.css" rel="stylesheet">
+    <link href="https://www.c6bank.com.br/c6-sans/c6-sans.css" rel="stylesheet">
+
+
+    <style>
+      body{
+        background: #121212;
+        font-family: "C6 Sans Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+        font-size: 17px;
+        line-height: 1.47059;
+        font-weight: 500;
+        letter-spacing: .02rem;
+        color: #fff;
+      }
+      h1, .h1, h2, .h2 {
+        letter-spacing: -.029rem;
+      }
+      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, button, .btn {
+        font-weight: 600;
+      }
+      body, input, textarea, select, button, html, h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, span {
+        font-synthesis: none;
+        -moz-font-feature-settings: 'kern';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        direction: ltr;
+        text-align: left;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .bg-transparent {
+        background: transparent!important; 
+      }
+      .sidebar {
+        box-shadow: inset -1px 0 0 rgb(0 0 0 / 0%) !important;
+      }
+      .fw-medium {
+        font-weight: 500 !important;
+      }
+      .text-muted{
+        color: #C0C0C0;
+      }
+      .rounded-xl{
+        border-radius: 8px !important;
+      }
+      .rounded-full {
+        border-radius: 100px !important;
+      }
+      .dropdown-menu-macos {
+        display: grid;
+        gap: 0.25rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
+      .font-weight-bolder {
+        font-weight: 600!important;
+      }
+      .text-sm {
+        font-size: .875rem!important;
+      }
+      .text-sm {
+        line-height: 1.5;
+      }
+
+
+      .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #444444;
+        background-color: #f5f5f5;
+        background-clip: padding-box;
+        border: 1px solid #ebebeb;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border-radius: 12px !important;
+        appearance: none;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      }
+      .form-floating>label {
+        color: #545454;
+        font-size: 93%;
+      }
+      .form-control:focus {
+        color: #212529;
+        background-color: #f5f5f5;
+        border-color: #ccc;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%);
+      }
+      .btn-check:focus+.btn-primary, .btn-primary:focus, .btn-primary:focus {
+        color: #fff;
+        background-color: #EA4933;
+        border-color: #EA4933;
+        box-shadow: 0 0 0 0.2rem rgb(234 73 51 / 22%);
+      }
+      .btn-check:focus+.btn, .btn:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgb(234 73 51 / 22%);
+      }
+      .btn-primary {
+        color: #fff;
+        background-color: #EA4933;
+        border-color: #EA4933;
+      }
+      .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #242424;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 14px;
+      }
+      .text-success {
+        color: #4caf50 !important;
+      }
+      .form-switch .form-check-input {
+        width: 2em;
+        margin-left: -1.5em;
+      }
+
+
+      .scrollers {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .scrollers .breadcrumb-item {
+        white-space: nowrap
+      }
+
+      .scrollers::-webkit-scrollbar {
+        display: none
+      }
+
+      .dot1 {
+        height: 7px;
+        width: 7px;
+        background-color: #C0C0C0;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .dot {
+        height: 7px;
+        width: 7px;
+        background-color: #C0C0C0;
+        border-radius: 50%;
+        opacity: .3;
+        display: inline-block;
+      }
+      .o-hidden{
+        overflow: hidden;
+      }
+      svg {
+        vertical-align: middle;
+        margin-top: -1px;
+      }
+
+/*
+.scrollers {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.scrollers .row {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  color: rgba(255, 255, 255, .75);
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+*/
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-transparent sidebar collapse pt-2">
+          <div class="position-sticky">
+            <div class="p-3">
+              <div class="dropdown">
+                <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                  <strong>Nancy</strong>
+                </a>
+                <ul class="dropdown-menu mx-0 shadow border-0 rounded-xl p-2 text-light" style="width: 200px;">
+                  <li>
+                    <a class="dropdown-item d-flex gap-2 align-items-center rounded text-light" href="#">
+                      <svg class="bi" width="16" height="16"><use xlink:href="#files"></use></svg>
+                      Documents
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item d-flex gap-2 align-items-center rounded" href="#">
+                      <svg class="bi" width="16" height="16"><use xlink:href="#image-fill"></use></svg>
+                      Photos
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item d-flex gap-2 align-items-center rounded" href="#">
+                      <svg class="bi" width="16" height="16"><use xlink:href="#film"></use></svg>
+                      Movies
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item d-flex gap-2 align-items-center rounded" href="#">
+                      <svg class="bi" width="16" height="16"><use xlink:href="#music-note-beamed"></use></svg>
+                      Music
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item d-flex gap-2 align-items-center rounded" href="#">
+                      <svg class="bi" width="16" height="16"><use xlink:href="#joystick"></use></svg>
+                      Games
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <a class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center rounded" href="#">
+                      <svg class="bi" width="16" height="16"><use xlink:href="#trash"></use></svg>
+                      Trash
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <span data-feather="home"></span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  Orders
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart"></span>
+                  Products
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Customers
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Reports
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  Integrations
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved reports</span>
+              <a class="link-secondary" href="#" aria-label="Add a new report">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Current month
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Last quarter
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Social engagement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Year-end sale
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main class="col-12 col-md-9 ms-sm-auto col-lg-10 px-0 px-md-4 o-hidden">
+
+          <div class="container-fluid my-4 mb-5 px-3">
+            <div class="row g-0 align-items-center">
+              <div class="col-2">
+                <a href="/c6/" onclick="window.history.go(-1); return false;" style="background:#3F3F3F;padding:9px 13px 11px 11px;border-radius: 100px;"><svg width="16px" fill="#979797" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M17.17,24a1,1,0,0,1-.71-.29L8.29,15.54a5,5,0,0,1,0-7.08L16.46.29a1,1,0,1,1,1.42,1.42L9.71,9.88a3,3,0,0,0,0,4.24l8.17,8.17a1,1,0,0,1,0,1.42A1,1,0,0,1,17.17,24Z"/></svg></a>
+              </div>
+              <div class="col-9 col-md-6">
+                <h2 class="fw-normal h5 m-0">
+                  Redimento da conta
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid my-5 px-1">
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <div class="card p-0 border-0 bg-transparent h-100">
+                  <div class="card-body pt-2 text-center">
+                    <h6 class="fw-normal mb-1" style="font-size:15px;">março</h6>
+                    <h2 class="fw-normal h1" style="font-size:38px;"><span class="h3 fw-normal">R$</span> 543,39</h3>
+                      <h6 class="fw-normal" style="font-size:15px;">em rendimento líquido</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="container-fluid my-5 px-3">
+              <div class="row g-3">
+                <div class="col-12 col-md-8">
+                  <div class="card p-1 border-0 shadow-sm h-100">
+                    <div class="card-body">
+                      <h6 class="fw-normal mb-1" style="font-size:15px;">Informações importantes</h6>
+                      <hr>
+                      <h6 class="fw-normal mt-4 mb-1" style="font-size:15px;">Rendimento Bruto <span class="fw-normal float-end">+ R$ 593,39</span></h6>
+                      <h6 class="fw-normal mb-1" style="font-size:15px;">Imposto de Renda <span class="fw-normal float-end">- R$ 26,98</span></h6>
+                      <h6 class="fw-normal mb-1" style="font-size:15px;">Desconto de IOF <span class="fw-normal float-end">- R$ 12,09</span></h6>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            <div class="container-fluid my-5 px-1">
+              <div class="row">
+                <div class="col-12 col-md-8">
+                  <div class="card p-0 border-0 bg-transparent h-100">
+                    <div class="card-body pt-1">
+
+                      <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                          <div style="background:#3F3F3F;padding: 11px 16px;border-radius: 100px;width: 50px;height: 50px;"><svg width="18" fill="#979797" id="Layer_1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m.291 8.552a2.443 2.443 0 0 1 .153-2.566 4.716 4.716 0 0 1 1.668-1.5l7.501-3.904a5.174 5.174 0 0 1 4.774 0l7.5 3.907a4.716 4.716 0 0 1 1.668 1.5 2.443 2.443 0 0 1 .153 2.566 2.713 2.713 0 0 1 -2.416 1.445h-18.584a2.713 2.713 0 0 1 -2.417-1.448zm22.709 13.448a2 2 0 0 0 -2-2v-8h-2v8h-3v-8h-2v8h-4v-8h-2v8h-3v-8h-2v8a2 2 0 0 0 -2 2 1 1 0 0 0 0 2h22a1 1 0 0 0 0-2z"/></svg></div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                          <h6 class="fw-normal mb-0" style="font-size:15px;">saldo em conta</h6>
+                          <h2 class="fw-normal h1 m-0"><span class="h6 fw-normal">R$</span> 12.939,90</h2>
+                        </div>
+                      </div>
+
+                      <hr class="my-3" style="opacity: .1;">
+
+                      <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                          <div style="background:#3F3F3F;padding: 11px 16px;border-radius: 100px;width: 50px;height: 50px;">
+                            <svg width="19" fill="#979797" class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"></path></svg>
+                          </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                          <h6 class="fw-normal m-0" style="font-size:15px;">rendendo atualmente</h6>
+                          <h2 class="fw-normal h1 text-success m-0">10,65% ao ano</h2>
+                        </div>
+                      </div>
+                      
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="px-3 mx-3 mb-2 mt-5">
+              <h2>Faça seu dinheiro render ainda mais.</h2>
+            </div>
+            <div class="px-3 mx-3 mt-3 mb-4" style="background:linear-gradient(150.53deg, #FFE45C 0%, #FFC900 100%);color: #333;padding: 10px;border-radius: 100px;height: 50px;text-align: center;"><h6 class="text-center mt-2 mb-0" style="font-size:16px;line-height: 14px;">Depositar dinheiro na conta</h6></div>
+
+
+
+          </main>
+        </div>
+      </div>
+
+
+      <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+      <script src="https://getbootstrap.com/docs/5.1/examples/dashboard/dashboard.js"></script>
+    </body>
+    </html>
