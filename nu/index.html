@@ -40,7 +40,21 @@
     </script>
     <script>
       addToHomescreen({
-    //options
+    athWrapper: ".ath-container",
+athGuidance: "ath-guidance",
+showClasses: [ "animated", "d-flex" ],
+showClass: "d-flex",   
+hideClass: "d-none",
+promptDlg: {
+   title: ".ath-banner-title",
+   body: ".ath-banner",
+   logo: ".ath-prompt-logo",
+   cancel: ".btn-cancel",
+   install: ".btn-install",
+   action: {
+      "ok": "Install",
+      "cancel": "Not Now"
+   }
   });
 </script>
 <script defer src="./main.js"></script>
