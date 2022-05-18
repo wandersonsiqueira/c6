@@ -274,6 +274,15 @@
         margin-bottom: -10px;
         border-radius: 0 0 3px 3px !important;
       }
+
+
+      .nav-link {
+    color: #464646;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: #428855;
+}
     </style>
 
   </head>
@@ -282,7 +291,7 @@
 
     <div class="container-fluid col-md-6" style="padding-top: 80px;padding-bottom: 130px;">
       <div class="container-fluid my-3 mb-5 px-0">
-        <div class="fixed-top py-5 px-5 w-50 mx-auto">
+        <div class="fixed-top py-5 px-5">
           <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-light border rounded shadow-sm" id="payments-tabs" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link rounded active text-center" id="debit-card-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Débito</button>
