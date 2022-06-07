@@ -1,7 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./Graphik-Regular.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(./Graphik-Medium.woff2) format('woff2');
+}
+
+
 :root {
-  --bs-font-sans-serif: 'Inter', system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --bs-font-sans-serif: 'Graphik', system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    -webkit-font-smoothing: antialiased;
+    appearance: none;
+    text-size-adjust: 100%;
+    border: 0px;
+    font-weight: inherit;
+    outline: 0px;
+    padding: 0px;
+    text-rendering: optimizelegibility;
 }
 
 body, input, textarea, select, button {
@@ -15,6 +44,10 @@ body, input, textarea, select, button {
 
 body {
   font-size: .875rem;
+}
+
+.fw-bold, .fw-bolder {
+  font-weight: 500 !important;
 }
 
 .feather {
@@ -109,6 +142,7 @@ a.nav-link.active {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 400;
+  letter-spacing: 0.05rem;
 }
 
 .btn-close {
